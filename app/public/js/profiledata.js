@@ -4,15 +4,26 @@ var app = new Vue({
     userName: '',
     userEmail: '',
     userEmailLink: '',
-    userBirthday: '',
+    userbirthday: '',
     userLocation: '',
   userImgLarge: '',
   userImgThumbnail: '',
 },
+
+computed: {
+  age() {
+    return moment().diff(this.userbirthday, 'years');
+  }
+},
+
+
   created() {
     this.fetchUser();
+    this.formatDate();
+
   },
   methods: {
+
       fetchUser: function() {
         fetch('https://randomuser.me/api/')
         .then(response => response.json())
@@ -21,15 +32,24 @@ var app = new Vue({
           console.log(userData);
           this.userName = userData.name.first + " " + userData.name.last;
           this.userEmail = userData.email;
-          this.userBirthday = userData.dob.date;
+          this.userbirthday = userData.dob.date;
           this.userLocation= userData.location.city + " "+ userData.location.state + ", "+userData.location.country
 
           this.userImgLarge= userData.picture.large;
-          this.userImgThumbnail= userData.picture.thumbnail;
+          this.userImgThumbnail= userData.picture.thumbnail
+
 
         })
-      }
 
-  }
+      },
+
+      formatDate(d) {
+      return moment(d).format("dddd, MMMM Do YYYY, h:mm:ss a (Z)");
+    }
+  },
+
+
+
+
 
 })

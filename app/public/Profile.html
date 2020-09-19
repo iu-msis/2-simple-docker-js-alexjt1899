@@ -44,19 +44,21 @@
                             </a>
 
                           <div class="col-sm-7 col-md-8">
-                              <h4> {{userName}}    </h4>
+                              <h4> {{userName}}, {{age}}   </h4>
+
                               <a v-bind:href="'mailto:' + userEmail"> {{userEmail}} </a>
                               <br>
 
                          <small><cite>{{userLocation}} <i class="glyphicon glyphicon-map-marker">
                               </i></cite></small>
+
                               <p>
 
 
                                   <br />
 
 
-                                  <i class="glyphicon glyphicon-gift"></i>{{userBirthday}}</p>
+                                  <i class="glyphicon glyphicon-gift"></i> {{formatDate(userbirthday)}} </p>
 
 
                               </div>
@@ -70,6 +72,7 @@
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
       <script src="js/profiledata.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
+
 
         </body>
       </html>
