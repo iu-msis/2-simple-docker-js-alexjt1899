@@ -24,8 +24,7 @@ computed: {
   },
   methods: {
 
-      fetchUser: function(event) {
-
+      fetchUser: function() {
 
         fetch('https://randomuser.me/api/')
         .then(response => response.json())
@@ -38,24 +37,22 @@ computed: {
           this.userLocation= userData.location.city + " "+ userData.location.state + ", "+userData.location.country
 
           this.userImgLarge= userData.picture.large;
-          this.userImgThumbnail= userData.picture.thumbnail
-
-
-            console.log("Submitted") ;
-      event.preventDefault();
+          this.userImgThumbnail= userData.picture.thumbnail;
 
         })
+
+console.log("submitted");
+
 
 
       },
 
+
       formatDate(d) {
       return moment(d).format("dddd, MMMM Do YYYY, h:mm:ss a (Z)");
-    }
+    },
+
   },
-
-
-
 
 
 

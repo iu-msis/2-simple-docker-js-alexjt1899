@@ -33,7 +33,7 @@
           <h3 class="masthead-brand">Learn More</h3>
           <nav class="topnav">
             <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href=""Profile.html">About Me</a>
+            <a class="nav-link" href="Profile.html">About Me</a>
             <a class="nav-link" href="Books.html">Favorite Books</a>
           </nav>
         </div>
@@ -41,15 +41,17 @@
 </div>
 
 <div>
-      <form method="post" v-on: submit="fetchUser: function(event)">
 
-        <button type="submit" class="btn btn-primary">New Profile</button>
-            </form>
 
 
 
 
                           <div id="userprofile" class="col-sm-4 col-md-5">
+
+                            <form method="post" v-on:submit.prevent="fetchUser">
+
+                              <button type="submit" class="btn btn-primary">New Profile</button>
+                                  </form>
 
                             <a v-bind:href="userImgLarge">
                               <img v-bind:src="userImgThumbnail" width=200px>
