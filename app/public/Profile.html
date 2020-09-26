@@ -41,9 +41,8 @@
 </div>
 
 <div>
-      <form v-on:submit.prevent="fetchUser">
-        <input></input>
-  <input></input>
+      <form method="post" v-on: submit="fetchUser: function(event)">
+
         <button type="submit" class="btn btn-primary">New Profile</button>
             </form>
 

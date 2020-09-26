@@ -24,7 +24,9 @@ computed: {
   },
   methods: {
 
-      fetchUser: function() {
+      fetchUser: function(event) {
+
+
         fetch('https://randomuser.me/api/')
         .then(response => response.json())
         .then(data => {
@@ -39,7 +41,8 @@ computed: {
           this.userImgThumbnail= userData.picture.thumbnail
 
 
-            console.log("Submitted")
+            console.log("Submitted") ;
+      event.preventDefault();
 
         })
 
