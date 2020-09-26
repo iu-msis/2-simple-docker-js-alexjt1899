@@ -39,7 +39,10 @@ computed: {
           this.userImgThumbnail= userData.picture.thumbnail
 
 
+            console.log("Submitted")
+
         })
+
 
       },
 
@@ -47,6 +50,7 @@ computed: {
       return moment(d).format("dddd, MMMM Do YYYY, h:mm:ss a (Z)");
     }
   },
+
 
 
 
