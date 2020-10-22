@@ -28,6 +28,7 @@ var app = new Vue({
 
       createComment(){
          fetch('api/comments/create.php',{
+           //Professor Gregory helped me fix typos here
            method:'POST',
            body: JSON.stringify(this.newComment),
            headers: {
