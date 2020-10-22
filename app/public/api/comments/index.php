@@ -10,7 +10,7 @@ $sql = 'SELECT * FROM Comments';
 $vars = [];
 
 if (isset($_GET['id'])) {
-  $sql = 'SELECT * FROM Comment WHERE id = ?';
+  $sql = 'SELECT * FROM Comments WHERE id = ?';
   $vars = [ $_GET['id'] ];
 }
 

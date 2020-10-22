@@ -49,8 +49,8 @@
     </thead>
     <tbody id=commentTableBody>
       <tr v-for="Comment in CommentList">
-        <th scope="row"> {{ CommentList.id }}  </th>
-        <td> {{ CommentList.commentText }} </td>
+        <th scope="row"> {{ Comment.id }}  </th>
+        <td> {{ Comment.commentText }} </td>
       </tr>
     </tbody>
   </table>
@@ -62,7 +62,7 @@
     <div>
       <form method="post" v-on:submit.prevent="createComment" id=newCommentForm>
 
-        <input type="text" v-model="newComment.id" id="commentText">
+        <input type="text" v-model="newComment.commentText" id="commentText">
         <div>
         <input type="submit" id="submitNewComment"value="Create">
       </div>
